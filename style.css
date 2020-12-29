@@ -1,0 +1,55 @@
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.accordion-wrapper {
+  min-width: 800px;
+}
+.accordion__item {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #000000;
+}
+
+.accordion__title {
+  padding: 10px;
+  background-color: olivedrab;
+  color: black;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion__title:before {
+  content: " ➕";
+
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 20px;
+  font-size: 14px;
+}
+
+.accordion__content{
+    position: relative;
+    background-color: orange;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+.accordion__item.active .accordion__content {
+height: 200px;
+}
+
+.accordion__item.active .accordion__title:before{
+    content: ' ➖';
+    font-style: 14px;
+}
